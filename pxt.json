@@ -8,13 +8,15 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "assets.json"
+        "assets.json",
+        "chch20.ts",
+        "chch20.old.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "2.0.63",
+        "target": "4.1.25",
         "targetId": "arcade"
     },
     "supportedTargets": [
