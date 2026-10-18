@@ -151,12 +151,20 @@ class Chacha20 {
         return data
     }
 
+    set enckey(keystack: Buffer[]) {
+        this._keystack = keystack.slice();
+    }
+
+    get enckey() {
+        return this._keystack.slice();
+    }
+
     private _update(data: Buffer, reset: boolean, reverse: boolean) {
         if (!(data) || data.length === 0) {
             throw ('Data should be type of bytes (Uint8Array) and not empty!')
         }
 
-        if (reset) this._byteCounter = 0
+        if (reset) this._byteCounter = 0;
         if (!reverse && reset) this._keystack = [];
 
         const output = pins.createBuffer(data.length);

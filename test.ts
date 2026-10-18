@@ -16,6 +16,7 @@ let ubuf = shasha.encrypt(control.createBufferFromUTF8(msg), 5);
 utf8decode.add(ubuf)
 let utxt = utf8decode.decode()
 console.log(`encrypted msg: ${utxt}`);
+console.log(`encrypted key: "${shasha.enckey.map(v => v.toHex()).join(",").substr(0, 80)}..."`);
 let tmp = shasha.decrypt(ubuf, 5);
 ubuf = tmp;
 utf8decode.add(ubuf)
